@@ -1,0 +1,1 @@
+{"backend":"upload.php","lang":"eng+fin","queuefolder":"01","firefox":""}

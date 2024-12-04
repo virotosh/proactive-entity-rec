@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.scripting-targets</key>
+	<true/>
+	<key>com.apple.security.temporary-exception.apple-events</key>
+	<array>
+		<string>com.google.chrome</string>
+		<string>com.apple.safari</string>
+		<string>com.apple.systemevents</string>
+		<string>com.apple.mail</string>
+		<string>com.microsoft.PowerPoint</string>
+		<string>com.microsoft.Word</string>
+		<string>com.microsoft.Excel</string>
+		<string>com.apple.finder</string>
+	</array>
+</dict>
+</plist>

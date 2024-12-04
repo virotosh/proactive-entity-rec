@@ -1,0 +1,7 @@
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\bin\x64\Debug\Surveillance.exe.config
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\obj\x64\Debug\Interop.SHDocVw.dll
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\obj\x64\Debug\Interop.Shell32.dll
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\obj\x64\Debug\Surveillance.csproj.ResolveComReference.cache
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\obj\x64\Debug\Surveillance.Form1.resources
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\obj\x64\Debug\Surveillance.Properties.Resources.resources
+D:\Research\Visual Studio Project\Projects\Surveillance\Surveillance\obj\x64\Debug\Surveillance.csproj.GenerateResource.Cache

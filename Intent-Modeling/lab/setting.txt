@@ -1,0 +1,8 @@
+timedelaysendtoserver;5
+timedelaycapturescreen;2
+lang;eng
+backend;http://reknowdesktopsurveillance.hiit.fi
+exceptionapplication;
+exceptionwindowtitle;
+idlemode;30
+queuefolder;01

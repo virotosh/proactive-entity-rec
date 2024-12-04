@@ -1,0 +1,13 @@
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\Surveillance.exe.config
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\Surveillance.exe
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\Surveillance.pdb
+D:\visual studio 2013\Projects\Surveillance\Surveillance\obj\Release\Surveillance.Form1.resources
+D:\visual studio 2013\Projects\Surveillance\Surveillance\obj\Release\Surveillance.Properties.Resources.resources
+D:\visual studio 2013\Projects\Surveillance\Surveillance\obj\Release\Surveillance.csproj.GenerateResource.Cache
+D:\visual studio 2013\Projects\Surveillance\Surveillance\obj\Release\Surveillance.exe
+D:\visual studio 2013\Projects\Surveillance\Surveillance\obj\Release\Surveillance.pdb
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\NDde.dll
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\Newtonsoft.Json.dll
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\NDde.xml
+D:\visual studio 2013\Projects\Surveillance\Surveillance\bin\Release\Newtonsoft.Json.xml
+D:\visual studio 2013\Projects\Surveillance\Surveillance\obj\Release\Surveillance.csprojResolveAssemblyReference.cache

@@ -1,0 +1,534 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+body {
+  width: 1250px;
+  background: #fafafa;
+}
+
+button {
+  margin-top: 100px;
+}
+
+@defaultRadius:30px;
+
+.RoundedShape(@radius:@defaultRadius){
+    -webkit-border-radius:@radius;
+       -moz-border-radius:@radius;
+            border-radius:@radius;  
+}
+
+.RoundedSquare(@radius:@defaultRadius){
+    .RoundedShape(@radius);
+}
+
+#selectPanel {
+  height: 90px;
+  width: 100%;
+  position: relative;
+  padding-left: 30px;
+  /*background: #fafafa;*/
+}
+#selection {
+  display: inline-block;
+  height: 100%;
+  font-size: 17px;
+  line-height: 17px;
+  font-family: Helvetica;
+  position: absolute;
+  top: 0px;
+}
+#selection.empty {
+  color: #5d5d5d;
+  position: relative;
+  top: 35px;
+}
+#clearSelection {
+  display: inline-block;
+  height: 17px;
+  font-size: 17px;
+  line-height: 17px;
+  color: #36aafe;
+  font-family: Helvetica;
+  position: absolute;
+  top: 42px;
+  right: 60px;
+  border-bottom: 1px solid #36aafe;
+  padding-bottom: 1px;
+  cursor: default;
+}
+.separator {
+  height: 1px;
+  width: 1200px;
+  margin: 0 30px;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
+  position: relative;
+  z-index: 1;
+}
+#flowingArea {
+  /*background: #fafafa;*/
+  position: relative;
+  top: -1px;
+}
+#people {
+  padding-left: 10px;
+  height: 165px;
+  width: 100%;
+  /*background: red;*/
+  position: relative;
+  overflow: hidden;
+}
+#applications {
+  padding-left: 10px;
+  height: 172px;
+  width: 100%;
+  /*background: blue;*/
+  position: relative;
+  overflow: hidden;
+}
+#documents {
+  padding-left: 10px;
+  height: 212px;
+  width: 100%;
+  /*background: blue;*/
+  position: relative;
+  overflow: hidden;
+}
+#topics {
+  padding-left: 10px;
+  height: 110px;
+  width: 100%;
+  /*background: blue;*/
+  position: relative;
+  overflow: hidden;
+}
+
+#peopleList {
+  /*.RoundedSquare;*/
+  border-radius: 25px;
+  font-size: 0;
+  width: 1250px;
+  height: 135px;
+  position: absolute;
+  /*left: -300px;*/
+  top: 20px;
+  /*background: background.png;*/
+  background-image: url("./images/background3.png") !important;
+}
+#applicationList {
+  border-radius: 25px;
+  font-size: 0;
+  width: 1250px;
+  height: 142px;
+  position: absolute;
+  /*left: -300px;*/
+  top: 20px;
+  /*background: green;*/
+  background-image: url("./images/background3.png") !important;
+}
+#documentList {
+  border-radius: 25px;
+  font-size: 0;
+  width: 1250px;
+  height: 182px;
+  position: absolute;
+  /*left: -300px;*/
+  top: 20px;
+  /*background: green;*/
+  background-image: url("./images/background3.png") !important;
+}
+#topicList {
+  border-radius: 25px;
+  font-size: 0;
+  width: 1250px;
+  height: 80px;
+  position: absolute;
+  /*left: -300px;*/
+  top: 20px;
+  /*background: green;*/
+  background-image: url("./images/background3.png") !important;
+}
+#peopleFlowingTool.entity,
+#documentFlowingTool.entity {
+  width: 0px;
+}
+#applicationFlowingTool.entity,
+#topicFlowingTool.entity {
+  width: 0px;
+}
+.entity {
+  width: 230px;
+  margin: 0 10px;
+  height: 100%;
+  /*background: gray;*/
+  /*border: solid 1px black;*/
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+  position: absolute;
+}
+
+.entityLabel {
+
+    color: #9d9d9d;
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    font-size: 13px;
+    line-height: 17px;
+    font-family: Helvetica;
+    left: 20px;
+}
+
+#selection .entity {
+  position: static;
+  width: 140px;
+  margin: 0 5px;
+}
+.entity.selected {
+  background: #f4f4eb;
+  border-radius: 10px;
+}
+#selection .profile {
+  width: 45px;
+  height: 45px;
+  margin-top: 10px;
+}
+#selection .peopleList .profile {
+  border-radius: 50%;
+  background-size: cover;
+}
+#selection .topicList .profile {
+  /*display: none;*/
+  /*height: 0px;*/
+  opacity: 0;
+}
+.profile {
+  position: relative;
+  margin: auto;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  font-size: 11px;
+  color: red;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("./images/user.png");
+}
+.applicationList .profile,
+.documentList .profile {
+  /*background-image: url("./images/default.png");*/
+  background-image: none;
+}
+#people .profile {
+  margin-top: 15px;
+  border-radius: 50%;
+  background-size: cover;
+}
+#applications .profile {
+  margin-top: 20px;
+  /*background-image: url("./images/default.png");*/
+  background-image: none;
+}
+#documents .profile {
+  margin-top: 30px;
+  background-image: url("./images/default.png");
+}
+#topicList .profile {
+  height: 0px;
+}
+#documents .label {
+  top: 20px;
+}
+#topics .label {
+  font-size: 20px;
+  line-height: 20px;
+  height: 20px;
+  top: 30px;
+  font-style: italic;
+}
+.label {
+  position: relative;
+  top: 15px;
+  width: 100%;
+  height: 15px;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: Helvetica;
+}
+.open {
+  display: none;
+}
+#documents .open {
+  display: block;
+  position: relative;
+  top: 40px;
+  width: 100%;
+  height: 15px;
+  font-size: 15px;
+  line-height: 15px;
+  font-style: italic;
+}
+#documents .open.hide {
+  display: none;
+}
+#selection .label {
+  top: 10px;
+  height: 10px;
+  font-size: 10px;
+  line-height: 10px;
+}
+#selection .topicList .label {
+  top: -18px;
+  font-size: 14px;
+  line-height: 14px;
+  height: 14px;
+  font-style: italic;
+}
+.delete {
+  position: relative;
+  top: -70px;
+  font-size: 18px;
+  right: -100px;
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  line-height: 18px;
+  display: none;
+  cursor: default;
+}
+#selection .entity:hover .delete {
+  display: block;
+}
+
+.profile.id2396 {
+  background-image: url("./images/2396.png") !important;
+}
+.profile.id3049 {
+  background-image: url("./images/3049.png") !important;
+}
+.profile.id3051 {
+  background-image: url("./images/3051.png") !important;
+}
+.profile.id3063 {
+  background-image: url("./images/3063.png") !important;
+}
+.profile.id3074 {
+  background-image: url("./images/3074.png") !important;
+}
+.profile.id3382 {
+  background-image: url("./images/3382.png") !important;
+}
+.profile.id3383 {
+  background-image: url("./images/3383.png") !important;
+}
+.profile.id3410 {
+  background-image: url("./images/3410.png") !important;
+}
+.profile.id3413 {
+  background-image: url("./images/3413.png") !important;
+}
+.profile.id3417 {
+  background-image: url("./images/3417.png") !important;
+}
+.profile.id3421 {
+  background-image: url("./images/3421.png") !important;
+}
+.profile.id3418 {
+  background-image: url("./images/3418.png") !important;
+}
+
+
+.profile.id7 {
+  background-image: url("./images/7.png") !important;
+}
+.profile.id18 {
+  background-image: url("./images/18.png") !important;
+}
+.profile.id44 {
+  background-image: url("./images/44.png") !important;
+}
+.profile.id58 {
+  background-image: url("./images/58.png") !important;
+}
+.profile.id107 {
+  background-image: url("./images/107.png") !important;
+}
+.profile.id139 {
+  background-image: url("./images/139.png") !important;
+}
+.profile.id388 {
+  background-image: url("./images/388.png") !important;
+}
+.profile.id1385 {
+  background-image: url("./images/1385.png") !important;
+}
+.profile.id2932 {
+  background-image: url("./images/2932.png") !important;
+}
+.profile.id3677 {
+  background-image: url("./images/3677.png") !important;
+}
+.profile.id4269 {
+  background-image: url("./images/4269.png") !important;
+}
+.profile.id4703 {
+  background-image: url("./images/4703.png") !important;
+}
+.profile.id5281 {
+  background-image: url("./images/5281.png") !important;
+}
+.profile.id6428 {
+  background-image: url("./images/6428.png") !important;
+}
+.profile.id6923 {
+  background-image: url("./images/6923.png") !important;
+}
+.profile.id8116 {
+  background-image: url("./images/8116.png") !important;
+}
+.profile.id8139 {
+  background-image: url("./images/8139.png") !important;
+}
+.profile.id8382 {
+  background-image: url("./images/8382.png") !important;
+}
+.profile.id8489 {
+  background-image: url("./images/8489.png") !important;
+}
+.profile.id9364 {
+  background-image: url("./images/9364.png") !important;
+}
+.profile.id11185 {
+  background-image: url("./images/11185.png") !important;
+}
+.profile.id11864 {
+  background-image: url("./images/11864.png") !important;
+}
+.profile.id13941 {
+  background-image: url("./images/13941.png") !important;
+}
+.profile.id14486 {
+  background-image: url("./images/14486.png") !important;
+}
+.profile.id19238 {
+  background-image: url("./images/19238.png") !important;
+}
+.profile.id19325 {
+  background-image: url("./images/19325.png") !important;
+}
+.profile.id20311 {
+  background-image: url("./images/20311.png") !important;
+}
+.profile.id26951 {
+  background-image: url("./images/26951.png") !important;
+}
+.profile.id27144 {
+  background-image: url("./images/27144.png") !important;
+}
+.profile.id30663 {
+  background-image: url("./images/30663.png") !important;
+}
+.profile.id31264 {
+  background-image: url("./images/31264.png") !important;
+}
+.profile.id32369 {
+  background-image: url("./images/32369.png") !important;
+}
+.profile.id32407 {
+  background-image: url("./images/32407.png") !important;
+}
+.profile.id32957 {
+  background-image: url("./images/32957.png") !important;
+}
+.profile.id34510 {
+  background-image: url("./images/34510.png") !important;
+}
+.profile.id34883 {
+  background-image: url("./images/34883.png") !important;
+}
+.profile.id35048 {
+  background-image: url("./images/35048.png") !important;
+}
+.profile.id37794 {
+  background-image: url("./images/37794.png") !important;
+}
+.profile.id44056 {
+  background-image: url("./images/44056.png") !important;
+}
+.profile.id46014 {
+  background-image: url("./images/46014.png") !important;
+}
+.profile.id50645 {
+  background-image: url("./images/50645.png") !important;
+}
+
+
+#documents .profile.id70800 {
+  background-image: url("./images/70800.png");
+}
+
+#documents .profile {
+  background-image: none !important;
+}
+.profile img.entityIcon {
+  display: none;
+}
+.profile img.entityOpenType {
+  display: none;
+}
+#documents .profile img.entityIcon {
+  display: block;
+  position: relative;
+  width: 90px;
+  left: -10px;
+}
+#applications .profile img.entityIcon {
+  display: block;
+  position: relative;
+  width: 70px;
+}
+#documents .profile img.entityOpenType {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  right: -20px;
+  bottom: 10px;
+}
+#selection .entity.documentList .profile {
+  background-image: none !important;
+}
+#selection .entity.applicationList img.entityIcon {
+  display: block;
+  position: relative;
+  width: 45px;
+}
+#selection .entity.documentList img.entityIcon {
+  display: block;
+  position: relative;
+  width: 55px;
+  left: -5px;
+  top: 6px;
+}
+#selection .entity.documentList img.entityOpenType {
+  display: block;
+  position: absolute;
+  width: 23px;
+  z-index: 1;
+  right: -15px;
+  bottom: 2px;
+}
